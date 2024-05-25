@@ -32,3 +32,13 @@ provider: install
 	go test -count=1 -tags=integration github.com/pact-foundation/pact-workshop-go/provider -run "TestPactProvider" -v
 
 .PHONY: install unit consumer provider run-provider run-consumer
+
+.PHONY: build-docker-pact
+build-docker-pact:
+	@echo "--- Building Docker image"
+	docker build -t pact-workshop-go .
+
+.PHONY: run-docker-pact
+run-docker-pact: build-docker-pact
+	@echo "--- Running Docker image"
+	docker run --rm -it pact-workshop-go
