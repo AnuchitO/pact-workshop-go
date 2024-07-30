@@ -1,5 +1,18 @@
 # Pact Go workshop
 
+## AnuchitO: run test inside docker
+
+```bash
+make run-docker-pact
+```
+
+then run test inside docker
+
+```bash
+make consumer
+```
+
+
 ## Introduction
 This workshop is aimed at demonstrating core features and benefits of contract testing with Pact.
 
